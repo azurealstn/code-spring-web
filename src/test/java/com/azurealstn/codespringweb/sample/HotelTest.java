@@ -13,9 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
-public class HotelTests {
+public class HotelTest {
 
-    public static final Logger log = LogManager.getLogger(HotelTests.class);
+    public static final Logger log = LogManager.getLogger(HotelTest.class);
 
     @Setter(onMethod_ = {@Autowired})
     private SampleHotel hotel;
