@@ -1,15 +1,14 @@
 package com.azurealstn.codespringweb.sample;
 
 import lombok.Data;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
-@Component
 @Data
+@Component
 public class Restaurant {
 
-    //setter 주입
-    @Setter(onMethod_ = @Autowired)
+    @Autowired
     private Chef chef;
 }

@@ -1,21 +1,20 @@
 package com.azurealstn.codespringweb.persistence;
 
-import lombok.Setter;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
+@Slf4j
+@SpringBootTest
+@ExtendWith(SpringExtension.class)
 public class JDBCTest {
-
-    public static final Logger log = LogManager.getLogger(JDBCTest.class);
 
     static {
         try {
@@ -27,16 +26,14 @@ public class JDBCTest {
 
     @Test
     public void testConnection() {
-        try (Connection conn =
-                     DriverManager.getConnection(
-                             "jdbc:oracle:thin:@localhost:1521:XE",
-                             "my_book",
-                             "my_book")) {
-            log.info(conn);
+        try (Connection conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@localhost:1521:XE",
+                "my_book",
+                "my_book"
+        )) {
+            log.info("conn: " + conn);
         } catch (Exception e) {
             fail(e.getMessage());
         }
     }
-
-
 }
