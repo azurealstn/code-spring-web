@@ -1,6 +1,13 @@
-</div>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+     </div>
+        <!-- /#page-wrapper -->
+
+    </div>
     <!-- /#wrapper -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- jQuery 주석처리 -->
+    <!-- <script src="/resources/vendor/jquery/jquery.min.js"></script> -->
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -14,7 +21,7 @@
     <script src="../../vendor/datatables-responsive/dataTables.responsive.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../../dist/js/sb-admin-2.js"></script>
+    <script src="../../dist/js/sb-admin-2.js" charset="utf-8"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
@@ -28,7 +35,6 @@
             .attr('style', 'height:1px');
     });
     </script>
-
 </body>
 
 </html>

@@ -37,12 +37,6 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
-    @GetMapping("/get")
-    public void get(@RequestParam("bno") Long bno, Model model) {
-        log.info("/get");
-        model.addAttribute("board", boardService.get(bno));
-    }
-
     @PostMapping("/modify")
     public String modify(BoardVO boardVO, RedirectAttributes redirectAttributes) {
         log.info("modify: " + boardVO);
@@ -59,5 +53,18 @@ public class BoardController {
         if (boardService.remove(bno)) redirectAttributes.addFlashAttribute("result", "success");
 
         return "redirect:/board/list";
+    }
+
+    //글 등록 페이지
+    @GetMapping("/register")
+    public void register() {
+
+    }
+
+    //조회 페이지
+    @GetMapping({"/get", "/modify"})
+    public void get(@RequestParam("bno") Long bno, Model model) {
+        log.info("/get or modify");
+        model.addAttribute("board", boardService.get(bno));
     }
 }
