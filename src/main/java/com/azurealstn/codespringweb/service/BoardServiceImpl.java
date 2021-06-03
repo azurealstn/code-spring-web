@@ -1,6 +1,7 @@
 package com.azurealstn.codespringweb.service;
 
 import com.azurealstn.codespringweb.domain.BoardVO;
+import com.azurealstn.codespringweb.domain.Criteria;
 import com.azurealstn.codespringweb.mapper.BoardMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -42,8 +43,16 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<BoardVO> getList() {
-        log.info("getList.........");
-        return boardMapper.getList();
+    public List<BoardVO> getList(Criteria criteria) {
+        log.info("get List with criteria: " + criteria);
+        return boardMapper.getListWithPaging(criteria);
     }
+
+    @Override
+    public int getTotal(Criteria criteria) {
+        log.info("get total count");
+        return boardMapper.getTotalCount(criteria);
+    }
+
+
 }

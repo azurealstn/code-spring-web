@@ -7,7 +7,13 @@
 ## 사용 기술
 
 - JDK 11
-- JSP
-- Spring Boot
-- MyBatis
+- JSP 2.3
+- Spring Boot 2.4.6
+- MyBatis 3
 - Oracle 11g (Sql Developer)
+- sb admin2 템플릿 (Bootstrap 기반)
+
+<br>
+<br>
+
+## 기능

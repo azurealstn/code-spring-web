@@ -1,6 +1,7 @@
 package com.azurealstn.codespringweb.mapper;
 
 import com.azurealstn.codespringweb.domain.BoardVO;
+import com.azurealstn.codespringweb.domain.Criteria;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -21,4 +22,10 @@ public interface BoardMapper {
     public int delete(Long bno);
 
     public int update(BoardVO boardVO);
+
+    //페이징
+    public List<BoardVO> getListWithPaging(Criteria criteria);
+
+    //전체 게시글 개수
+    public int getTotalCount(Criteria criteria);
 }

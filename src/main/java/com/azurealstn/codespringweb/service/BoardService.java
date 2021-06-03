@@ -1,6 +1,7 @@
 package com.azurealstn.codespringweb.service;
 
 import com.azurealstn.codespringweb.domain.BoardVO;
+import com.azurealstn.codespringweb.domain.Criteria;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,5 +16,7 @@ public interface BoardService {
 
     public boolean remove(Long bno);
 
-    public List<BoardVO> getList();
+    public List<BoardVO> getList(Criteria criteria);
+
+    public int getTotal(Criteria criteria);
 }

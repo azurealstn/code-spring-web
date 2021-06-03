@@ -1,6 +1,7 @@
 package com.azurealstn.codespringweb.service;
 
 import com.azurealstn.codespringweb.domain.BoardVO;
+import com.azurealstn.codespringweb.domain.Criteria;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -37,7 +38,8 @@ public class BoardServiceTest {
 
     @Test
     public void testGetList() {
-        boardService.getList().forEach(board -> log.info("board: " + board));
+        //boardService.getList().forEach(board -> log.info("board: " + board));
+        boardService.getList(new Criteria(2, 10)).forEach(board -> log.info("board: " + board));
     }
 
     @Test

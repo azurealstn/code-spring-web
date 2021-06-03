@@ -1,10 +1,13 @@
 package com.azurealstn.codespringweb.mapper;
 
 import com.azurealstn.codespringweb.domain.BoardVO;
+import com.azurealstn.codespringweb.domain.Criteria;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
 
 @SpringBootTest
 @Slf4j
@@ -65,5 +68,16 @@ public class BoardMapperTest {
 
         int count = boardMapper.update(boardVO);
         log.info("update count: " + count);
+    }
+
+    @Test
+    public void testPaging() {
+        Criteria criteria = new Criteria();
+        criteria.setPageNum(3);
+        criteria.setAmount(10);
+
+        List<BoardVO> list = boardMapper.getListWithPaging(criteria);
+
+        list.forEach(board -> log.info("board: " + board.getBno()));
     }
 }
