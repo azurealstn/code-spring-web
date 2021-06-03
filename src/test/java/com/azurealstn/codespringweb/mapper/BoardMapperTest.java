@@ -80,4 +80,15 @@ public class BoardMapperTest {
 
         list.forEach(board -> log.info("board: " + board.getBno()));
     }
+
+    @Test
+    public void testSearch() {
+        Criteria criteria = new Criteria();
+        criteria.setKeyword("aa");
+        criteria.setType("TC");
+
+        List<BoardVO> list = boardMapper.getListWithPaging(criteria);
+
+        list.forEach(board -> log.info("board: " + board));
+    }
 }
